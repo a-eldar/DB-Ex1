@@ -44,7 +44,7 @@ create table country(
 
 
 
-create table studentsAccepted(
+create table students_accepted(
 	year integer CHECK(year >= 0),
 	iau_id1 varchar,
 	students5_estimated integer,
