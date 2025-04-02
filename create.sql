@@ -47,7 +47,7 @@ create table country(
 create table students_accepted(
 	year integer CHECK(year >= 0),
 	iau_id1 varchar,
-	students5_estimated integer,
+	students5_estimated integer CHECK (students5_estimated >= 0),
 	PRIMARY KEY(iau_id1, year),
 	FOREIGN KEY(iau_id1) REFERENCES university(iau_id1) ON DELETE CASCADE
 );
