@@ -76,6 +76,9 @@ def parse_file_to_tables(university_outwriter, country_outwriter, students_accep
     students_accepted_set = set()
     for row in reader:
                 # TO DO splits row into the different csv table files
+        if row[INDEX_OF["iau_id1"]] == "iau_id1":
+            continue
+        
         if row[INDEX_OF["iau_id1"]] not in university_set:
             university_row = [row[INDEX_OF[col]] for col in UNIVERSITY_COLUMNS]
             university_outwriter.writerow(university_row)
