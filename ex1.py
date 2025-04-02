@@ -70,7 +70,7 @@ def parse_file_to_tables(university_outwriter, country_outwriter, students_accep
     # For some universities, not all the info is present in every row.
     # For those universities, the whole info appears in the last row.
     # So we'll go in reverse to ensure we get all of the info.
-    reader = reversed(reader)
+    reader = reversed(list(reader))
     university_set = set()
     country_set = set()
     students_accepted_set = set()
