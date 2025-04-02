@@ -102,6 +102,10 @@ def process_file():
     students_accepted_outfile = open("students_accepted.csv", 'w' , encoding='UTF8')
     students_accepted_outwriter = csv.writer(students_accepted_outfile, delimiter=",", quoting=csv.QUOTE_MINIMAL)
 
+    university_outwriter.writerow(UNIVERSITY_COLUMNS)
+    country_outwriter.writerow(COUNTRY_COLUMNS)
+    students_accepted_outwriter.writerow(STUDENTS_ACCEPTED_COLUMNS)
+
     with ZipFile('enrollment.zip') as zf:
         with zf.open('enrollment.csv', 'r') as infile:
             parse_file_to_tables(university_outwriter, country_outwriter, students_accepted_outwriter, infile)
